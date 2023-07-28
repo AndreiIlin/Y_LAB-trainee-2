@@ -14,6 +14,7 @@ interface Env {
   // Адрес API сервера, используется для проксирования
   API_URL: string,
   API_PATH: string,
+  SOCKET_URL: string,
 }
 
 /**

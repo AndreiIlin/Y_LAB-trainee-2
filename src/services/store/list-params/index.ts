@@ -8,7 +8,7 @@ import { InitListParamsStateType } from './types';
  */
 abstract class ListParamsState extends StoreModule<{ apiEndpoint: string }> {
   validator: any;
-  //api: any;
+  //ws: any;
 
   init() {
     this.validator = this.services.validator.make(this.schemaParams());
@@ -206,7 +206,7 @@ abstract class ListParamsState extends StoreModule<{ apiEndpoint: string }> {
    * @param apiParams
    */
   async load(apiParams: any) {
-    // const response = await this.api.findMany(apiParams);
+    // const response = await this.ws.findMany(apiParams);
     // // Установка полученных данных в состояние
     // return response.data.result;
     return {

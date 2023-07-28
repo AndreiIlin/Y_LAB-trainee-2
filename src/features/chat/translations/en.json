@@ -1,0 +1,14 @@
+{
+  "title": "Chat",
+  "message": {
+    "created": "Created",
+    "author": "Author",
+    "status": "Status",
+    "statuses": {
+      "sent": "Sent",
+      "delivered": "Delivered",
+      "read": "Read"
+    }
+  },
+  "send": "Send"
+}

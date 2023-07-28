@@ -9,8 +9,14 @@ export default (env : ImportMetaEnv): TServicesConfig => ({
       //headers: {},
       //auth:{} base auth
     },
-    // Настройки для конкретных модулей api по их названию
-    endpoints: {}
+    // Настройки для конкретных модулей ws по их названию
+    endpoints: {},
+  },
+  ws: {
+    default: {
+      url: env.SSR ? env.SOCKET_URL : ''
+    },
+    sockets: {},
   },
   store: {
     // Настройки для конкретных модулей состояния по их названиям

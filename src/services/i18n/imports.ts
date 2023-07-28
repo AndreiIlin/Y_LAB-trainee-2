@@ -15,10 +15,9 @@ export default {
     'navigation': () => import('@src/features/navigation/translations/en.json'),
     'main': () => import('@src/features/main/translations/en.js'),
     'catalog': () => import('@src/features/catalog/translations/en.json'),
+    'chat': () => import('@src/features/chat/translations/en.json'),
   },
-  'en-EN': {
-
-  },
+  'en-EN': {},
   // Код локали и её словари с переводами
   'ru-RU': {
     'auth': () => import('@src/features/auth/translations/ru.json'),
@@ -27,5 +26,7 @@ export default {
     'navigation': () => import('@src/features/navigation/translations/ru.json'),
     'main': () => import('@src/features/main/translations/ru.js'),
     'catalog': () => import('@src/features/catalog/translations/ru.json'),
-  }
+    'chat': () => import('@src/features/chat/translations/ru.json'),
+
+  },
 };

@@ -1,0 +1,55 @@
+.ChatMessage {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: #e7f3e7;
+  border: none;
+  border-radius: 8px;
+
+  &_own {
+    background-color: #9f9fda;
+  }
+
+  &-meta {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+
+    &-title {
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    &-description {
+      font-size: 14px;
+      font-weight: 400;
+
+      &_status {
+        &_sent {
+          color: #cecaca;
+        }
+
+        &_delivered {
+          color: #d3610c;
+        }
+
+        &_read {
+          color: #0048ff;
+        }
+      }
+    }
+  }
+
+  &-text {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 14px;
+    white-space: pre-wrap;
+  }
+}

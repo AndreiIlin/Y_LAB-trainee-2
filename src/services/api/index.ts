@@ -1,11 +1,8 @@
-import axios, {AxiosInstance, AxiosRequestConfig} from 'axios';
-import {TServices} from '@src/services/types';
-import Service from "@src/services/service";
+import Service from '@src/services/service';
+import { TServices } from '@src/services/types';
+import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import * as endpoints from './imports';
-import {
-  TApiConfig,
-  TEndpoints, TEndpointsNames,
-} from './types';
+import { TApiConfig, TEndpoints, TEndpointsNames } from './types';
 
 /**
  * Сервис HTTP API (REST API) к внешнему серверу
@@ -49,6 +46,7 @@ class ApiService extends Service<TApiConfig, undefined> {
   get axios() {
     return this._axios;
   }
+
 
   /**
    * Установка общего заголовка для всех endpoints

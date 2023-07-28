@@ -10,7 +10,7 @@ export default async function root(envPartial: Partial<ImportMetaEnv> = {}): Pro
   const env: ImportMetaEnv = {...import.meta.env, ...envPartial};
   // Инициализация менеджера сервисов
   const servicesManager = new Services(env);
-  // Через services получаем доступ к store, api, i18n и всем другим сервисам
+  // Через services получаем доступ к store, ws, i18n и всем другим сервисам
   const services = await servicesManager.init(clientConfig(env));
   // Контекст для метаданных html
   const head = {};

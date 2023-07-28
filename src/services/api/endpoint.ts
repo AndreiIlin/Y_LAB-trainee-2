@@ -28,7 +28,7 @@ abstract class Endpoint<Config = AxiosRequestConfig> {
 
   /**
    * Конфигурация по умолчанию.
-   * Переопределяется общими параметрами сервиса api и параметрами из конфига экземпляра
+   * Переопределяется общими параметрами сервиса ws и параметрами из конфига экземпляра
    */
   defaultConfig(): Config | AxiosRequestConfig {
     return {

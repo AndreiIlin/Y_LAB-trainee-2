@@ -6,6 +6,7 @@ export interface ISessionState {
   user: {
     _id: string,
     email: string,
+    username: string,
     profile: {
       name: string,
     }
