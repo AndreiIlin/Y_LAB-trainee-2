@@ -17,6 +17,7 @@ export default {
     'main': () => import('@src/features/main/translations/en.js'),
     'catalog': () => import('@src/features/catalog/translations/en.json'),
     'chat': () => import('@src/features/chat/translations/en.json'),
+    'redactor': () => import('@src/features/redactor/translations/en.json'),
   },
   'en-EN': {},
   // Код локали и её словари с переводами
@@ -28,6 +29,6 @@ export default {
     'main': () => import('@src/features/main/translations/ru.js'),
     'catalog': () => import('@src/features/catalog/translations/ru.json'),
     'chat': () => import('@src/features/chat/translations/ru.json'),
-
+    'redactor': () => import('@src/features/redactor/translations/ru.json'),
   },
 };

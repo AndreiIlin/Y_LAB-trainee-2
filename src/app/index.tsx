@@ -17,6 +17,7 @@ const Login = lazy(() => import('@src/features/auth/pages/login'));
 const Catalog = lazy(() => import('@src/features/catalog/page'));
 const Profile = lazy(() => import('@src/features/auth/pages/profile'));
 const Chat = lazy(() => import('@src/features/chat/page'));
+const Redactor = lazy(() => import('@src/features/redactor/page'));
 const NotFound = lazy(() => import('@src/app/not-found'));
 const ExampleModals = lazy(() => import('@src/features/example-modals/page'));
 const ExampleI18n = lazy(() => import('@src/features/example-i18n/page'));
@@ -39,6 +40,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Protected redirect="/login"><Profile /></Protected>} />
           <Route path="/chat" element={<Protected redirect="/login"><Chat /></Protected>} />
+          <Route path="/redactor" element={<Redactor />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

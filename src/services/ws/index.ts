@@ -15,7 +15,7 @@ class WSService extends Service<TWSConfig, undefined> {
     this._sockets = {} as TSockets;
   }
 
-  init() {
+  override init() {
     // Создание экземпляров socket
     const names = Object.keys(sockets) as TSocketsNames[];
     for (const name of names) this.initSocket(name);

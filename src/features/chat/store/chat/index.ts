@@ -2,9 +2,9 @@ import { IChatMessage, IChatState, TMessageStatus } from '@src/features/chat/sto
 import { IMessage } from '@src/features/chat/ws/types';
 import StoreModule from '@src/services/store/module';
 
-class ChatState extends StoreModule<undefined> {
+class ChatState extends StoreModule<IChatState> {
 
-  defaultState(): IChatState {
+  override defaultState(): IChatState {
     return {
       messages: [],
     };

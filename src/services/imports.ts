@@ -7,4 +7,6 @@ export default {
   modals: () => import('@src/services/modals'),
   i18n: () => import('@src/services/i18n'),
   store: () => import('@src/services/store'),
+  ws: () => import('@src/services/ws'),
+  canvas: () => import('@src/services/canvas'),
 };

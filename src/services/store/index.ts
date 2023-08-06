@@ -68,7 +68,6 @@ class StoreService extends Service<TStoreConfig, TStoreModulesState> {
         name
       ) as TStoreModules[Key];
       if (state) this.modules[key].setState(state as any);
-      // if (state) this.modules[key].state = state;
     }
   }
 
