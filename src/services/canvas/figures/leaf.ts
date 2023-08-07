@@ -20,6 +20,11 @@ class Leaf extends Figure {
   direction: 'left' | 'right' = 'left';
   angle = 0;
   shift = 0;
+  shiftSpeed = 0.5;
+  fallingSpeed = 0.5;
+  rotationSpeed = 0.5;
+  minAngle = -45;
+  maxAngle = 45;
 
   constructor(canvas: HTMLCanvasElement, params: IFigureParams) {
     super(canvas, params);
@@ -35,7 +40,7 @@ class Leaf extends Figure {
   override draw() {
     if (!this.ctx || !this.image) return;
 
-    if (this.OriginalImageWidth === 0 || this.OriginalImageHeight === 0) {
+    if (!this.OriginalImageWidth || !this.OriginalImageHeight) {
       this.OriginalImageWidth = this.image.width;
       this.OriginalImageHeight = this.image.height;
       this.imageRatio = this.image.width / this.image.height;
@@ -62,19 +67,19 @@ class Leaf extends Figure {
   leafFall = () => {
     if (Math.min(this.y2, this.y1) >= (this.height + this.params.scrollY) / this.params.scale) return;
 
-    this.y1 += 0.5;
-    this.y2 += 0.5;
+    this.y1 += this.fallingSpeed;
+    this.y2 += this.fallingSpeed;
 
     const width = (this.width + this.params.scrollX) / this.params.scale;
 
     if (this.direction === 'left') {
       if (this.x1 >= 0 && this.shift >= -width / 10) {
-        this.x1 -= 0.5;
-        this.x2 -= 0.5;
-        this.shift -= 0.5;
+        this.x1 -= this.shiftSpeed;
+        this.x2 -= this.shiftSpeed;
+        this.shift -= this.shiftSpeed;
 
-        if (this.angle <= 60) {
-          this.angle += 0.5;
+        if (this.angle <= this.maxAngle) {
+          this.angle += this.rotationSpeed;
         }
 
       } else {
@@ -82,12 +87,12 @@ class Leaf extends Figure {
       }
     } else {
       if (this.x2 <= width && this.shift <= width / 10) {
-        this.x1 += 0.5;
-        this.x2 += 0.5;
-        this.shift += 0.5;
+        this.x1 += this.shiftSpeed;
+        this.x2 += this.shiftSpeed;
+        this.shift += this.shiftSpeed;
 
-        if (this.angle >= -45) {
-          this.angle -= 0.5;
+        if (this.angle >= this.minAngle) {
+          this.angle -= this.rotationSpeed;
         }
 
       } else {
